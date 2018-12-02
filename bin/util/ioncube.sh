@@ -14,9 +14,8 @@ install_ioncube_ext() {
     curl -L ${dep_url} | tar xz
 
     pushd ${dep_dirname}
-    ext_dir=/app/.heroku/php/lib/php/extensions/
-    echo ext_dir
-    bin_dir=${OUT_PREFIX}/bin
+    ext_dir=$build_dir/.heroku/php
+    bin_dir=$build_dir/.heroku/php/bin
     mkdir -p ${ext_dir}
     mkdir -p ${bin_dir}
     cp ioncube_loader_lin_${PHP_VERSION%.*}.so ${ext_dir}/ioncube.so
