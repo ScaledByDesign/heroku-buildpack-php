@@ -18,7 +18,7 @@ install_ioncube_ext() {
     bin_dir=$build_dir/.heroku/php/bin
     mkdir -p ${ext_dir}
     mkdir -p ${bin_dir}
-    cp ioncube_loader_lin_${PHP_VERSION%.*}.so ${ext_dir}/ioncube.so
+    cp ioncube_loader_lin_7.2.so ${ext_dir}/ioncube.so
     popd
 }
 
