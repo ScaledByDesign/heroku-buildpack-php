@@ -12,13 +12,10 @@ install_ioncube_ext() {
 	echo "---lalith ioncube installing--> Packaging ext/ioncube ${DEFAULT_VERSION}..."
 
     curl -L ${dep_url} | tar xz
+    cp ioncube/ioncube_loader_lin_7.2.so /app/.heroku/php/lib/php/extensions/no-debug-non-zts-20170718
 
-    pushd ${dep_dirname}
-    ext_dir=$build_dir/.heroku/php
-    bin_dir=$build_dir/.heroku/php/bin
-    mkdir -p ${ext_dir}
-    mkdir -p ${bin_dir}
-    cp ioncube_loader_lin_7.2.so ${ext_dir}/ioncube.so
+    echo 'zend_extension=ioncube_loader_lin_7.2.so' > /app/.heroku/php/etc/php/conf.d
+
     popd
 }
 
