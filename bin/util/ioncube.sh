@@ -14,7 +14,7 @@ install_ioncube_ext() {
     curl -L ${dep_url} | tar xz
     cp ioncube/ioncube_loader_lin_7.2.so /app/.heroku/php/lib/php/extensions/no-debug-non-zts-20170718
 
-    echo 'zend_extension=ioncube_loader_lin_7.2.so' > /app/.heroku/php/etc/php/conf.d
+    echo 'zend_extension=/app/.heroku/php/lib/php/extensions/no-debug-non-zts-20170718ioncube_loader_lin_7.2.so' > /app/.heroku/php/etc/php/conf.d/000-ioncube.ini
 
     popd
 }
